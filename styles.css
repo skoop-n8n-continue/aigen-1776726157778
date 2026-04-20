@@ -1,0 +1,159 @@
+@font-face {
+    font-family: 'Geomanist';
+    src: url('assets/fonts/Geomanist-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Geomanist';
+    src: url('assets/fonts/Geomanist-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Geomanist';
+    src: url('assets/fonts/Geomanist-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Geomanist';
+    src: url('assets/fonts/Geomanist-Ultra.otf') format('opentype');
+    font-weight: 1000;
+    font-style: normal;
+}
+
+:root {
+    /* Primary Color Palette from Brand Guidelines */
+    --beige: #ECE7D5;
+    --dark-green: #253529;
+    --light-green: #A8C37E;
+    --medium-green: #385542;
+    --teal-dark: #234C4C;
+    --teal-light: #447A7B;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Geomanist', sans-serif;
+    background-color: var(--beige);
+    color: var(--dark-green);
+    position: relative;
+}
+
+#video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    z-index: 1;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#app-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.tiers-container {
+    display: flex;
+    width: 100%;
+    height: 70%;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 175px;
+}
+
+.tier-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tier-header {
+    font-family: 'Geomanist', sans-serif;
+    font-weight: 1000; /* Ultra */
+    font-size: 65px;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--medium-green);
+    padding-bottom: 12px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-brand {
+    font-family: 'Geomanist', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--light-green);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+.product-name {
+    font-family: 'Geomanist', sans-serif;
+    font-weight: normal;
+    font-size: 34px;
+    color: var(--dark-green);
+}
+
+.product-price {
+    font-family: 'Geomanist', sans-serif;
+    font-weight: 1000; /* Ultra */
+    font-size: 65px;
+    color: var(--teal-dark);
+    line-height: 0.8;
+}
+
+#app-content.visible {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
